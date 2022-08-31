@@ -98,13 +98,13 @@ function App(props) {
 
           <br/>
           <h5 style={{ color: "green", display: "inline-block" }}>
-            Overall Price PAID:&nbsp;
+            Overall Price: (BUY) : &nbsp;
           </h5>
           <b style={{ color: "green" }}>{overallChargesPaid}</b>
 
           <br/>
           <h5 style={{ color: "red", display: "inline-block" }}>
-            Overall Price RECIEVE: &nbsp;
+            Overall Price (SELL) : &nbsp;
           </h5>
           <b style={{ color: "red" }}>{overallChargesRecieve}</b>
         </div>
