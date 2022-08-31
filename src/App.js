@@ -88,7 +88,7 @@ function App(props) {
 
           <br />
           <label> Total Charges: </label>
-          <b>{totalCharges}</b>
+          <b><u>{totalCharges}</u></b>
 
           <br/>
           <h5 style={{ color: "red", display: "inline-block" }}>
