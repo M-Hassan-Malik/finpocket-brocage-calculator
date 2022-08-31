@@ -79,12 +79,6 @@ function App(props) {
           <b>{totalSharePrice}</b>
 
           <br />
-          <label>
-            {" "}
-            Applicable Commision-Rate <b>(0.15%)/share:</b>{" "}
-          </label>
-
-          <br />
           <label> Estimated-Comission (Qty x Commision-Rate): </label>
           <b>{estimateComission}</b>
 
