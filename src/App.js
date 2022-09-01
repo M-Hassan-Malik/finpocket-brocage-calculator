@@ -88,7 +88,8 @@ function App(props) {
             onChange={onChange}
           />
           <span style={{ fontStyle: "italic" }}>
-           &nbsp; || {(sharePrice - lock.sharePrice).toFixed(2)}{" "}
+            &nbsp; ||{" "}
+            {(Number(sharePrice) - Number(lock.sharePrice)).toFixed(2)}{" "}
           </span>
 
           <br />
@@ -101,28 +102,28 @@ function App(props) {
             onChange={onChange}
           />
           <span style={{ fontStyle: "italic" }}>
-           &nbsp; || {(numberOfShares - lock.numberOfShares).toFixed(2)}{" "}
+            &nbsp; || {(Number(numberOfShares) - Number(lock.numberOfShares)).toFixed(2)}{" "}
           </span>
 
           <br />
           <label> Total Price of Shares: </label>
           <b>{totalSharePrice}</b>
           <span style={{ fontStyle: "italic" }}>
-           &nbsp; || {(totalSharePrice - lock.totalSharePrice).toFixed(2)}{" "}
+            &nbsp; || {Number(totalSharePrice) - Number(lock.totalSharePrice)}{" "}
           </span>
 
           <br />
           <label> Estimated-Comission (Qty x Commision-Rate): </label>
           <b>{estimateComission}</b>
           <span style={{ fontStyle: "italic" }}>
-           &nbsp; || {(estimateComission - lock.estimateComission).toFixed(2)}{" "}
+            &nbsp; || {(Number(estimateComission) - Number(lock.estimateComission)).toFixed(2)}{" "}
           </span>
 
           <br />
           <label> FED Tax (Estimated-Comission x 13%): </label>
           <b>{FED_Tax}</b>
           <span style={{ fontStyle: "italic" }}>
-           &nbsp; || {(FED_Tax - lock.FED_Tax).toFixed(2)}{" "}
+            &nbsp; || {(Number(FED_Tax) - Number(lock.FED_Tax)).toFixed(2)}{" "}
           </span>
 
           <br />
@@ -130,7 +131,7 @@ function App(props) {
           <b>
             <u>{totalCharges}</u>
             <span style={{ fontStyle: "italic" }}>
-             &nbsp; || {(totalCharges - lock.totalCharges).toFixed(2)}{" "}
+              &nbsp; || {(Number(totalCharges) - Number(lock.totalCharges)).toFixed(2)}{" "}
             </span>
           </b>
 
@@ -140,7 +141,7 @@ function App(props) {
           </h5>
           <b style={{ color: "red" }}>{overallChargesPaid}</b>
           <span style={{ fontStyle: "italic" }}>
-          &nbsp; || {(overallChargesPaid - lock.overallChargesPaid).toFixed(2)}{" "}
+            &nbsp; || {(Number(overallChargesPaid) - Number(lock.overallChargesPaid)).toFixed(2)}{" "}
           </span>
 
           <br />
@@ -149,7 +150,7 @@ function App(props) {
           </h5>
           <b style={{ color: "green" }}>{overallChargesRecieve}</b>
           <span style={{ fontStyle: "italic" }}>
-          &nbsp;  || {(overallChargesRecieve - lock.overallChargesRecieve).toFixed(2)}{" "}
+            &nbsp; || {(Number(overallChargesRecieve) - Number(lock.overallChargesRecieve)).toFixed(2)}{" "}
           </span>
         </div>
       </div>
