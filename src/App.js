@@ -44,7 +44,6 @@ function App(props) {
   }, [sharePrice, numberOfShares]);
 
   useEffect(() => {
-
     setLock({
       sharePrice: sharePrice,
       numberOfShares: numberOfShares,
@@ -88,6 +87,9 @@ function App(props) {
             value={sharePrice}
             onChange={onChange}
           />
+          <span style={{ fontStyle: "italic" }}>
+            || {sharePrice - lock.sharePrice}{" "}
+          </span>
 
           <br />
           <label> Number Of Shares: (QTY) </label>
@@ -98,39 +100,54 @@ function App(props) {
             min={1}
             onChange={onChange}
           />
+          <span style={{ fontStyle: "italic" }}>
+            || {numberOfShares - lock.numberOfShares}{" "}
+          </span>
 
           <br />
           <label> Total Price of Shares: </label>
-          <b>{totalSharePrice}</b>
+          <b>{totalSharePrice}</b><span style={{ fontStyle: "italic" }}>
+            || {totalSharePrice - lock.totalSharePrice}{" "}
+          </span>
 
           <br />
           <label> Estimated-Comission (Qty x Commision-Rate): </label>
-          <b>{estimateComission}</b>
+          <b>{estimateComission}</b><span style={{ fontStyle: "italic" }}>
+            || {estimateComission - lock.estimateComission}{" "}
+          </span>
 
           <br />
           <label> FED Tax (Estimated-Comission x 13%): </label>
-          <b>{FED_Tax}</b>
+          <b>{FED_Tax}</b><span style={{ fontStyle: "italic" }}>
+            || {FED_Tax - lock.FED_Tax}{" "}
+          </span>
 
           <br />
           <label> Total Charges: </label>
           <b>
-            <u>{totalCharges}</u>
+            <u>{totalCharges}</u><span style={{ fontStyle: "italic" }}>
+            || {totalCharges - lock.totalCharges}{" "}
+          </span>
           </b>
 
           <br />
           <h5 style={{ color: "red", display: "inline-block" }}>
             Overall Price: (BUY) : &nbsp;
           </h5>
-          <b style={{ color: "red" }}>{overallChargesPaid}</b>
+          <b style={{ color: "red" }}>{overallChargesPaid}</b><span style={{ fontStyle: "italic" }}>
+            || {overallChargesPaid - lock.overallChargesPaid}{" "}
+          </span>
 
           <br />
           <h5 style={{ color: "green", display: "inline-block" }}>
             Overall Price (SELL) : &nbsp;
           </h5>
-          <b style={{ color: "green" }}>{overallChargesRecieve}</b>
+          <b style={{ color: "green" }}>{overallChargesRecieve}</b><span style={{ fontStyle: "italic" }}>
+            || {overallChargesRecieve - lock.overallChargesRecieve}{" "}
+          </span>
         </div>
       </div>
-      <hr/>
+      <hr />
       <div>
         <button
           onClick={() => setToggle(!toggle)}
