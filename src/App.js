@@ -4,6 +4,7 @@ import "./App.css";
 
 function App(props) {
   const { title } = props;
+  const [testLoopLength, setTestLoopLength] = useState(1);
   const [sharePrice, setSharePrice] = useState(0);
   const [numberOfShares, setNumberOfShares] = useState(1);
   const [totalSharePrice, setTotalSharePrice] = useState(0);
@@ -107,11 +108,11 @@ function App(props) {
     recoveryPercentage: 4.9751,
     status: "Token",
   };
-  
+
   const test = async (length) => {
     for (let i = 0; i < length; i++) {
       axios.post(`https://digitalbackendapi.starmarketingonline.com/sales/generateTest`, dataa).then((res) => {
-        console.log(i, " - ", { ...res.data });
+        console.log(`${i} => `, { ...res.data });
       });
     }
   };
@@ -120,7 +121,9 @@ function App(props) {
   return (
     <div className="App">
       <div>
-        <button onClick={()=> test(1000)}> Click Me</button>
+        
+        <button onClick={()=> test(testLoopLength)}> Click Me</button> <input type='number' value={testLoopLength} onChange={(e)=> setTestLoopLength(e.target.value) }/>
+
         <h2>{title}</h2>
         <br />
         <div>
