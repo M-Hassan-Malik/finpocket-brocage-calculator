@@ -122,7 +122,7 @@ function App(props) {
     <div className="App">
       <div>
         
-        <button onClick={()=> test(testLoopLength)}> Click Me</button> <input type='number' value={testLoopLength} onChange={(e)=> setTestLoopLength(e.target.value) }/>
+        <button onClick={()=> test(testLoopLength)}>Test API Length: </button> <input type='number' value={testLoopLength} onChange={(e)=> setTestLoopLength(e.target.value) }/>
 
         <h2>{title}</h2>
         <br />
