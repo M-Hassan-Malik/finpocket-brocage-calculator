@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -73,9 +74,53 @@ function App(props) {
       }
   };
 
+  var dataa = {
+    project: "620661572b5db71186321491",
+    date: "Tue Aug 23 2022 00:00:00 GMT+0500 (Pakistan Standard Time)",
+    clientName: "Mr. Devi Parsaad",
+    relation: "S/O Faraz",
+    cnic: "44444-4444444-4",
+    country: "Pakistan",
+    city: "Karachi",
+    address: "Karachi",
+    contactNo: "1213213",
+    unitNo: "LG 03",
+    category: "shops",
+    block: "630f3e5582dc8b1374451692",
+    type: "630f3e5582dc8b1374451692",
+    bookedBy: "06020001",
+    sellingPriceCash: 10000,
+    sellingPriceLoan: 10000,
+    sumOfRupees: 20000,
+    onAccountOf: "Ahmed",
+    paymentType: "Cash",
+    drwanBank: "UBL",
+    extrasRoadFacing: 1000,
+    extrasCorner: 1000,
+    extrasWestOpen: 100,
+    totalExtras: 2100,
+    grossSales: 22100,
+    discount: 2000,
+    netSales: 20100,
+    downPayment: 1000,
+    recoveredAmount: 1000,
+    recoveryPercentage: 4.9751,
+    status: "Token",
+  };
+  
+  const test = async (length) => {
+    for (let i = 0; i < length; i++) {
+      axios.post(`https://digitalbackendapi.starmarketingonline.com/sales/generateTest`, dataa).then((res) => {
+        console.log(i, " - ", { ...res.data });
+      });
+    }
+  };
+
+
   return (
     <div className="App">
       <div>
+        <button onClick={()=> test(1000)}> Click Me</button>
         <h2>{title}</h2>
         <br />
         <div>
